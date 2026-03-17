@@ -8,4 +8,6 @@ function getComputerChoice() {
     );
 }
 
-getComputerChoice();
+function getHumanChoice() {
+    return prompt("What do you choose?");
+}
