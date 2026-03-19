@@ -1,3 +1,12 @@
+let winnerText = document.querySelector("h2");
+let choiceDisplay = document.querySelector("h3");
+
+let humanScoreText = document.querySelector("#human-score");
+let computerScoreText = document.querySelector("#computer-score");
+
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
 
@@ -8,33 +17,53 @@ function getComputerChoice() {
     );
 }
 
-function getHumanChoice() {
-    return prompt("What do you choose?");
-}
-
 function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    computerChoice = computerChoice.toLowerCase();
+    let winner;
 
     if (humanChoice === computerChoice) {
-        return "tie";
+        winner = "tie";
     } else if (
         (humanChoice === "rock" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice === "rock")
     ){
-        return "computer";
+        winner = "computer";
     } else {
-        return "human";
+        winner = "human"
+    }
+
+    manageWinner(winner, humanChoice, computerChoice);
+}
+
+function manageWinner(winner, humanChoice, computerChoice) {
+    if (winner === "tie") {
+        winnerText.textContent = "It's a Tie!";
+        choiceDisplay.textContent = `${humanChoice.toUpperCase()} ties with ${computerChoice.toUpperCase()}!`
+    } else if (winner === "computer") {
+        winnerText.textContent = "Computer Won!"
+        choiceDisplay.textContent = `${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}!`
+        computerScoreText.textContent = ++computerScore;
+    } else {
+        winnerText.textContent = "You Won!";
+        choiceDisplay.textContent = `${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}!`
+        humanScoreText.textContent = ++humanScore;
+    }
+
+    if (computerScore === 5) {
+        winnerText.textContent = "You Lost!"
+        choiceDisplay.textContent = "Make another choice to play again"
+    } else if (humanScore === 5) {
+        winnerText.textContent = "You Win!"
+        choiceDisplay.textContent = "Make another choice to play again"
     }
 }
 
-let buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
-        let humanChoice = e.target.textContent;
-        let computerChoice = getComputerChoice();
+        let humanChoice = e.target.textContent.toLowerCase();
+        let computerChoice = getComputerChoice().toLowerCase();
         console.log(playRound(humanChoice, computerChoice));
     })
 });
