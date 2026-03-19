@@ -29,34 +29,12 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
+let buttons = document.querySelectorAll("button");
 
-    for (let i = 0; i < 5; i++) {
-        let humanChoice = getHumanChoice();
+buttons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        let humanChoice = e.target.textContent;
         let computerChoice = getComputerChoice();
-
-        let winner = playRound(humanChoice, computerChoice);
-
-        if (winner === "human") {
-            humanScore++;
-            alert(`You win! ${humanChoice} beats ${computerChoice}!`);
-        } else if (winner == "computer") {
-            computerScore++;
-            alert(`You lose! ${computerChoice} beats ${humanChoice}!`);
-        } else {
-            alert("Tie!");
-        }
-    }
-
-    if (humanScore > computerScore) {
-        alert(`You won! You had ${humanScore} points and the computer only had ${computerScore} points.`);
-    } else if (humanScore < computerScore) {
-        alert(`You lost! The computer had ${computerScore} points but you only had ${humanScore} points`);
-    } else {
-        alert(`Tie! You both had ${humanScore} points.`);
-    }
-}
-
-playGame()
+        console.log(playRound(humanChoice, computerChoice));
+    })
+});
