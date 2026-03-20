@@ -4,20 +4,66 @@
     font-family: "DynaPuff", Arial;
     margin: 0;
     padding: 0;
-    color: #F4CE14;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
     background-color: #2f2f30;
-    border-bottom: dotted thick #F5F7F8;
+    border-bottom: 10px dotted  #F5F7F8;
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+    color: #F4CE14;
 }
 
 .content {
     background-color: #45474B;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+h2 {
+    font-size: 50px;
+    color: #f4cf14e0;
+    margin-top: 65px;
+}
+
+h3 {
+    font-size: 30px;
+    color: #fad20ac0;
+    margin-bottom: 50px;
+}
+
+.score-text {
+    color: #F4CE14;
+    display: flex;
+    gap: 50px
+}
+
+.score-text p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 35px;
 }
 
 button {
     background-color: #eeeeee00;
-    border: dotted thick #F4CE14;
+    border: 7px dotted #F4CE14;
     background-color: #2f2f30;
 }
