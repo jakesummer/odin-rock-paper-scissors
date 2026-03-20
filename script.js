@@ -58,12 +58,10 @@ function manageWinner(winner, humanChoice, computerChoice) {
     }
 }
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelector(".buttons");
 
-buttons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        let humanChoice = e.target.textContent.toLowerCase();
-        let computerChoice = getComputerChoice().toLowerCase();
-        console.log(playRound(humanChoice, computerChoice));
-    })
+buttons.addEventListener("click", (e) => {
+    let humanChoice = e.target.parentElement.id;
+    let computerChoice = getComputerChoice();
+    playRound(humanChoice, computerChoice);
 });
