@@ -7,6 +7,8 @@ let computerScoreText = document.querySelector("#computer-score");
 let humanScore = 0;
 let computerScore = 0;
 
+let gamesWon = 0;
+let gamesWonText = document.querySelector("#games-won");
 let isGameOver = false;
 
 function getComputerChoice() {
@@ -60,13 +62,15 @@ function manageWinner(winner, humanChoice, computerChoice) {
     }
 
     if (computerScore === 5) {
-        winnerText.textContent = "You Lost!"
+        winnerText.textContent = "You Lost the Game!"
         choiceDisplay.textContent = "Make another choice to play again"
         isGameOver = true;
     } else if (humanScore === 5) {
-        winnerText.textContent = "You Win!"
+        winnerText.textContent = "You Win the Game!"
         choiceDisplay.textContent = "Make another choice to play again"
         isGameOver = true;
+
+        gamesWonText.textContent = ++gamesWon;
     }
 }
 

@@ -40,7 +40,7 @@ h2 {
 h3 {
     font-size: 30px;
     color: #fad20ac0;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .score-text {
@@ -66,4 +66,11 @@ button {
     background-color: #eeeeee00;
     border: 7px dotted #F4CE14;
     background-color: #2f2f30;
+    border-radius: 30%;
+}
+
+p {
+    font-size: 25px;
+    margin-top: 20px;
+    color: #F4CE14;
 }
