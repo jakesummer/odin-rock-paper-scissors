@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+
+* {
+    font-family: "DynaPuff", Arial;
+    margin: 0;
+    padding: 0;
+    color: #F4CE14;
+}
+
+.header {
+    background-color: #2f2f30;
+    border-bottom: dotted thick #F5F7F8;
+}
+
+.content {
+    background-color: #45474B;
+}
+
+button {
+    background-color: #eeeeee00;
+    border: dotted thick #F4CE14;
+    background-color: #2f2f30;
+}
