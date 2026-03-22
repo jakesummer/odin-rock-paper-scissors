@@ -1,7 +1,5 @@
 # odin-rock-paper-scissors
 
-Made for The Odin Project
-
-Live Demo: https://jakesummer.github.io/odin-rock-paper-scissors/
+Live Demo: https://jakesummer.github.io/rock-paper-scissors/
 
 Emojis from: Microsoft
