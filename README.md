@@ -1,4 +1,4 @@
-# odin-rock-paper-scissors
+# rock-paper-scissors
 
 Live Demo: https://jakesummer.github.io/rock-paper-scissors/
 
